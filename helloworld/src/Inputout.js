@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import inputItem from './inputItem';
 
 // 定义一个React组件
 class Inputout extends Component {
@@ -40,7 +41,8 @@ class Inputout extends Component {
         <ul>
           {
             this.state.list.map((item, index) => {
-              return <li key={index} onClick={this.handleItemClick.bind(this, index)}>{item}</li>
+              return <inputItem key={index} content={item} index={index} />
+              // return <li key={index} onClick={this.handleItemClick.bind(this, index)}>{item}</li>
             })
           }
         </ul>
