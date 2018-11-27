@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class inputItem extends Component {
+class InputItem extends Component {
 
     // 子组件如果想和父组件通信，要调用父组件传递过来的方法
     handleDelete() {
@@ -12,10 +12,10 @@ class inputItem extends Component {
     // 子组件通过props接收父组件传递过来的参数
     render() {
         return (
-            <div ibClick={this.handleDelete.bind(this)}>{this.props.content}}</div>
+            <div onClick={this.handleDelete.bind(this)}>{this.props.content}</div>
         )
     }
 
 }
 
-export default inputItem;
+export default InputItem;
