@@ -25,10 +25,10 @@ class Inputout extends Component {
     })
   }
 
-  handleItemClick(index) {
+  handleDelete(index) {
     const list = [...this.state.list];
     list.splice(index, 1);
-    this.setState({list})
+    this.setState({ list })
   }
   
   render() {
@@ -41,7 +41,7 @@ class Inputout extends Component {
         <ul>
           {
             this.state.list.map((item, index) => {
-              return <inputItem key={index} content={item} index={index} />
+              return <inputItem delete={this.handleDelete.bind(this)} key={index} content={item} index={index} />
               // return <li key={index} onClick={this.handleItemClick.bind(this, index)}>{item}</li>
             })
           }
