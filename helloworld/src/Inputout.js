@@ -10,6 +10,10 @@ class Inputout extends Component {
       list : [],
       inputValue : ''
     }
+
+    this.handleBenClick = this.handleBenClick.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleBenClick() {
@@ -30,22 +34,31 @@ class Inputout extends Component {
     list.splice(index, 1);
     this.setState({ list })
   }
+
+  getItems() {
+    return (
+      this.state.list.map((item, index) => {
+        return ( 
+        <InputItem 
+        delete = {this.handleDelete}
+        key = {index}
+        content = {item}
+        index = {index}
+          />
+        )
+        // return <li key={index} onClick={this.handleItemClick.bind(this, index)}>{item}</li>
+      })
+    )
+  }
   
   render() {
     return (
       <div>
         <div>
-          <input value = {this.state.inputValue} onChange={this.handleInputChange.bind(this)} />
-          <button onClick={this.handleBenClick.bind(this)}>add</button>
+          <input value = {this.state.inputValue} onChange={this.handleInputChange} />
+          <button onClick={this.handleBenClick}>add</button>
         </div>
-        <ul>
-          {
-            this.state.list.map((item, index) => {
-              return <InputItem delete={this.handleDelete.bind(this)} key={index} content={item} index={index} />
-              // return <li key={index} onClick={this.handleItemClick.bind(this, index)}>{item}</li>
-            })
-          }
-        </ul>
+        <ul>{ this.getItems() }</ul>
       </div>
     );
   }
