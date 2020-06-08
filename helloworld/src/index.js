@@ -6,9 +6,10 @@ import ReactDOM from 'react-dom'
 // import Clock from './Clock'
 // import Toggle from './Toggle'
 // import LoginControl from './LoginControl'
-import Page from './Page'
+// import Page from './Page'
+import FlavorForm from './FlavorForm'
 
 // ReactDOM.render(<Inputout />, document.getElementById('root'))
 // ReactDOM.render(<Toggle />, document.getElementById('root'))
 
-ReactDOM.render(<Page />, document.getElementById('root'))
+ReactDOM.render(<FlavorForm />, document.getElementById('root'))
